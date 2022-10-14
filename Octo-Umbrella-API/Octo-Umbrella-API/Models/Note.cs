@@ -1,5 +1,4 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
 using System.Text.Json.Serialization;
 
 namespace Octo_Umbrella_API.Models
@@ -16,8 +15,9 @@ namespace Octo_Umbrella_API.Models
         public DateTime CreatedDate { get; set; }
         public DateTime LastModifiedDate { get; set; }
 
-        public Note( string title, string content)
+        public Note(string title, string content)
         {
+            Id = Guid.NewGuid().ToString();
             Title = title;
             Content = content;
             CreatedDate = DateTime.Now;

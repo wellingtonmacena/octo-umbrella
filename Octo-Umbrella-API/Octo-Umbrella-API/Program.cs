@@ -1,7 +1,3 @@
-using Microsoft.Extensions.Configuration;
-using Octo_Umbrella_API.Controllers;
-using Octo_Umbrella_API.Data;
-
 namespace Octo_Umbrella_API
 {
     public class Program
@@ -12,10 +8,11 @@ namespace Octo_Umbrella_API
 
             // Add services to the container.
 
-            builder.Services.AddControllers().AddNewtonsoftJson();
+            builder.Services.AddControllers().AddNewtonsoftJson(x =>
+            x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c => { c.EnableAnnotations(); });
 
             var app = builder.Build();
 
@@ -29,7 +26,6 @@ namespace Octo_Umbrella_API
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
