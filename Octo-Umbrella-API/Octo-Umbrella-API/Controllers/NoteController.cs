@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Octo_Umbrella_API.Models;
-using Octo_Umbrella_API.Services;
+using Octo_Umbrella_API.Repositories;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Octo_Umbrella_API.Controllers
@@ -8,10 +8,10 @@ namespace Octo_Umbrella_API.Controllers
     [ApiController]
     public class NoteController : Controller
     {
-        public NoteService NoteService { get; set; }
+        public NoteRepository NoteRepository { get; set; }
         public NoteController()
         {
-            NoteService = new NoteService();
+            NoteRepository = new NoteRepository();
         }
 
         [Route("[controller]")]
@@ -19,7 +19,7 @@ namespace Octo_Umbrella_API.Controllers
         [SwaggerOperation(Summary = "Gets all notes saved.", Description = "Returns a list with all notes saved.")]    
         public IActionResult GetAll()
         {
-            return Ok(NoteService.GetAll());
+            return Ok(NoteRepository.GetAll());
         }
 
         [Route("[controller]/{id}")]
@@ -27,7 +27,7 @@ namespace Octo_Umbrella_API.Controllers
         [SwaggerOperation(Summary = "Gets one note filtered by id.", Description = "Returns a Note object.")]
         public IActionResult GetById(string id)
         {
-            Note note = NoteService.GetById(id);
+            Note note = NoteRepository.GetById(id);
             if (note == null)
                 return NotFound();
 
@@ -41,7 +41,7 @@ namespace Octo_Umbrella_API.Controllers
         {
             try
             {
-                NoteService.Create(note);
+                NoteRepository.Create(note);
                 return StatusCode(201, note);
             }
             catch (Exception ex)
@@ -58,7 +58,7 @@ namespace Octo_Umbrella_API.Controllers
         {
             try
             {
-                Note updatedNote = NoteService.Update(note, id);
+                Note updatedNote = NoteRepository.Update(note, id);
 
                 if (updatedNote == null)
                     return NotFound();
@@ -79,7 +79,7 @@ namespace Octo_Umbrella_API.Controllers
         {
             try
             {
-                NoteService.DeleteAll();
+                NoteRepository.DeleteAll();
                 return StatusCode(204);
             }
             catch (Exception ex)
@@ -96,7 +96,7 @@ namespace Octo_Umbrella_API.Controllers
         {
             try
             {
-                NoteService.DeleteById(id);
+                NoteRepository.DeleteById(id);
                 return StatusCode(200);
             }
             catch (Exception ex)

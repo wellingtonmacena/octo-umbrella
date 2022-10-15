@@ -27,3 +27,4 @@ CMD ASPNETCORE_URLS=http://*:$PORT dotnet Octo-Umbrella-API.dll
 #docker build -t octo-umbrella-api .
 #heroku container:push web -a octo-umbrella-api
 #heroku container:release web -a octo-umbrella-api
+#https://www.treinaweb.com.br/blog/publicando-uma-aplicacao-asp-net-core-no-heroku

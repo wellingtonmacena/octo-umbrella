@@ -3,20 +3,19 @@ using MongoDB.Driver;
 using Octo_Umbrella_API.Data;
 using Octo_Umbrella_API.Models;
 
-namespace Octo_Umbrella_API.Services
+namespace Octo_Umbrella_API.Repositories
 {
-    public class NoteService
+    public class NoteRepository
     {
         private readonly IMongoCollection<Note> _notes;
-        public IConfigurationSection Section { get; }
 
-        public NoteService()
+        public NoteRepository()
         {
-            var mongoClient = new MongoClient(NoteDatabaseSettings.ConnectionString);
+            var mongoClient = new MongoClient(DatabaseSettings.ConnectionString);
 
             _notes = mongoClient
-                .GetDatabase(NoteDatabaseSettings.DatabaseName)
-                .GetCollection<Note>(NoteDatabaseSettings.CollectionName);
+                .GetDatabase(DatabaseSettings.DatabaseName)
+                .GetCollection<Note>(DatabaseSettings.NoteCollectionName);
         }
 
         public List<Note> GetAll()
