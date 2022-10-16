@@ -31,6 +31,13 @@ namespace Octo_Umbrella_API.Repositories
             return note.First();
         }
 
+        public List<Note> GetAllFromUserByUserEmail(string userEmail)
+        {
+            var note = _notes.Find(s => s.UserEmail == userEmail);
+            if (note == null || note.CountDocuments() == 0) return null;
+
+            return note.ToList();
+        }
 
         public void Create(Note note)
         {

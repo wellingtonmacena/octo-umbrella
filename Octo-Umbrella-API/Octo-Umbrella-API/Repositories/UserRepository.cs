@@ -78,11 +78,11 @@ namespace Octo_Umbrella_API.Repositories
         public User Login(User user)
         {
             var filter = Builders<User>.Filter.Where(x => x.Email.Equals(user.Email) && x.Password.Equals(user.Password));
-            var foundUser = _users.Find(filter).First();
+            IFindFluent<User, User> foundUser = _users.Find(filter);
 
-            if (foundUser == null ) return null;
+            if (foundUser == null || foundUser.CountDocuments() ==0 ) return null;
 
-            return foundUser;
+            return foundUser.First();
         }
     }
 }

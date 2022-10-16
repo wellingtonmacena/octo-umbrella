@@ -9,9 +9,11 @@ namespace Octo_Umbrella_API.Controllers
     public class UserController : Controller
     {
         public UserRepository UserRepository { get; set; }
+        public NoteRepository NoteRepository { get; set; }
         public UserController()
         {
             UserRepository = new UserRepository();
+            NoteRepository = new NoteRepository();
         }
 
         [Route("[controller]")]
@@ -58,15 +60,15 @@ namespace Octo_Umbrella_API.Controllers
         {
             try
             {
-                User foundUser= UserRepository.Login(user);
+                User foundUser = UserRepository.Login(user);
                 if (foundUser == null)
                     return NotFound();
 
-                return Ok(foundUser);
+                List<Note> notes = NoteRepository.GetAllFromUserByUserEmail(foundUser.Email);
+                return Ok(new { User = foundUser, Notes = notes});
             }
             catch (Exception ex)
             {
-
                 return StatusCode(500, ex);
             }
         }
