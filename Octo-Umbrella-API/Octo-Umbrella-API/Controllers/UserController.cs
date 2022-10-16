@@ -24,7 +24,7 @@ namespace Octo_Umbrella_API.Controllers
 
         [Route("[controller]/{id}")]
         [HttpGet()]
-        [SwaggerOperation(Summary = "Gets one User filtered by id.", Description = "Returns a User object.")]
+        [SwaggerOperation(Summary = "Gets one user filtered by id.", Description = "Returns a user object.")]
         public IActionResult GetById(string id)
         {
             User User = UserRepository.GetById(id);
@@ -36,7 +36,7 @@ namespace Octo_Umbrella_API.Controllers
 
         [HttpPost]
         [Route("[controller]")]
-        [SwaggerOperation(Summary = "Gets one User filtered by id.", Description = "Returns a User object.")]
+        [SwaggerOperation(Summary = "Creates one user object", Description = "Returns a user object.")]
         public IActionResult InsertOne([FromBody] User User)
         {
             try
@@ -53,7 +53,7 @@ namespace Octo_Umbrella_API.Controllers
 
         [HttpPost]
         [Route("[controller]/login")]
-        [SwaggerOperation(Summary = "Gets one User filtered by id.", Description = "Returns a User object.")]
+        [SwaggerOperation(Summary = "Signs in one user.", Description = "Returns a list with all notes of user saved")]
         public IActionResult Login([FromBody] User user)
         {
             try
@@ -73,7 +73,7 @@ namespace Octo_Umbrella_API.Controllers
 
         [HttpPut]
         [Route("[controller]/{id}")]
-        [SwaggerOperation(Summary = "Updates one User filtered by id.", Description = "Returns User object updated.")]
+        [SwaggerOperation(Summary = "Updates one user filtered by id.", Description = "Returns user object updated.")]
         public async Task<IActionResult> UpdateOne([FromBody] User User, string id)
         {
             try
@@ -94,7 +94,7 @@ namespace Octo_Umbrella_API.Controllers
 
         [HttpDelete]
         [Route("[controller]")]
-        [SwaggerOperation(Summary = "Deletes all Userd saved.", Description = "Returns nothing")]
+        [SwaggerOperation(Summary = "Deletes all users saved.", Description = "Returns nothing")]
         public IActionResult DeleteAll()
         {
             try
@@ -111,7 +111,7 @@ namespace Octo_Umbrella_API.Controllers
 
         [HttpDelete]
         [Route("[controller]/{id}")]
-        [SwaggerOperation(Summary = "Deletes one User filtered by id .", Description = "Returns nothing")]
+        [SwaggerOperation(Summary = "Deletes one user filtered by id .", Description = "Returns nothing")]
         public IActionResult DeleteOne(string id)
         {
             try

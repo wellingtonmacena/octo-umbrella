@@ -36,7 +36,7 @@ namespace Octo_Umbrella_API.Controllers
 
         [HttpPost]
         [Route("[controller]")]
-        [SwaggerOperation(Summary = "Gets one note filtered by id.", Description = "Returns a Note object.")]
+        [SwaggerOperation(Summary = "Creates one note object.", Description = "Returns a note object.")]
         public IActionResult InsertOne([FromBody] Note note)
         {
             try
