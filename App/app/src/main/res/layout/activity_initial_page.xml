@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fontFamily="@font/baloo"
+    android:background="@color/orange"
+    tools:context=".InitialPage">
+
+    <ImageButton
+        android:id="@+id/bt_menu"
+        android:layout_width="304dp"
+        android:layout_height="408dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/square_cornered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="199dp"
+        android:layout_height="167dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_menu"
+        app:layout_constraintEnd_toEndOf="@+id/bt_menu"
+        app:layout_constraintStart_toStartOf="@+id/bt_menu"
+        app:layout_constraintTop_toTopOf="@+id/bt_menu"
+        app:layout_constraintVertical_bias="0.184"
+        app:srcCompat="@drawable/ic_octo_umbrella" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="130dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/dark_blue"
+        android:fontFamily="@font/baloo"
+        android:onClick="GoToLoginPage"
+        android:text="@string/txt_login"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_menu" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="157dp"
+        android:layout_height="77dp"
+        android:textSize="20sp"
+        android:backgroundTint="@color/dark_blue"
+        android:fontFamily="@font/baloo"
+        android:onClick="GoToSignUpPage"
+        android:text="@string/txt_signUp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Octo-umbrella</string>
+    <string name="txt_signUp">Cadastro</string>
+    <string name="txt_login">Login</string>
 </resources>
