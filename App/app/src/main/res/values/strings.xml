@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Octo-umbrella</string>
-    <string name="txt_signUp">Cadastro</string>
-    <string name="txt_login">Login</string>
+    <string name="txt_signUp">CADASTRO</string>
+    <string name="txt_login">LOGIN</string>
     <string name="txt_full_name">Nome Completo</string>
     <string name="txt_birth_date">Data de nascimento</string>
     <string name="txt_email">Email</string>
     <string name="txt_password">Senha</string>
     <string name="txt_confirmation_password">Senha Novamente</string>
     <string name="txt_confirm">Confirmar</string>
+    <string name="txt_forget_password">Esqueceu sua senha?</string>
+    <string name="txt_enter">Entrar</string>
+    <string name="txt_create_your_Account"> <u> Crie sua conta</u> </string>
 </resources>

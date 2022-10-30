@@ -4,6 +4,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/orange"
+    android:fontFamily="@font/baloo"
     tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="201dp"
+        android:layout_height="221dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_octo_umbrella" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="392dp"
+        android:layout_height="572dp"
+        android:layout_marginTop="292dp"
+        android:background="@drawable/ic_square_cornered"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="12sp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/txt_login"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="27sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55sp"
+            android:layout_marginTop="30sp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/txt_email"
+            android:textAlignment="viewStart"
+            android:textColor="@color/dark_gray"
+            android:textSize="23sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/inp_name"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:autofillHints="name"
+            android:background="@drawable/input" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55sp"
+            android:layout_marginTop="30sp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/txt_password"
+            android:textAlignment="viewStart"
+            android:textColor="@color/dark_gray"
+            android:textSize="23sp"></TextView>
+
+        <EditText
+            android:id="@+id/inp_birth_date"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:autofillHints="Date"
+            android:background="@drawable/input"
+            android:inputType="date" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="55sp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/txt_forget_password"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/dark_gray"
+            android:textSize="15sp"></TextView>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50sp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/dark_blue"
+            android:fontFamily="@font/baloo"
+            android:onClick="Enter"
+            android:text="@string/txt_enter"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="50sp"
+            android:fontFamily="@font/baloo"
+            android:onClick="CreateAccount"
+            android:text="@string/txt_create_your_Account"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
