@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.octo_umbrella">
-
     <!-- permissions for INTERNET -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,16 +16,19 @@
         android:theme="@style/Theme.Octoumbrella"
         tools:targetApi="31">
         <activity
-            android:name=".SignupActivity"
+            android:name=".NotesActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".InitialPage"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".LoadingActivity"
+            android:name=".activities.InitialPage"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoadingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,8 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

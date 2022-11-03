@@ -65,7 +65,8 @@ namespace Octo_Umbrella_API.Controllers
                     return NotFound();
 
                 List<Note> notes = NoteRepository.GetAllFromUserByUserEmail(foundUser.Email);
-                return Ok(new { User = foundUser, Notes = notes});
+                foundUser.SetNotes(notes);
+                return Ok(foundUser);
             }
             catch (Exception ex)
             {

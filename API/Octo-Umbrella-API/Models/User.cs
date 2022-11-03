@@ -14,6 +14,7 @@ namespace Octo_Umbrella_API.Models
         public string Password { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? LastModifiedDate { get; set; }
+        public List<Note>? Notes { get; set; }
 
         [JsonConstructor]
         public User(string fullName, string email, string password)
@@ -24,6 +25,11 @@ namespace Octo_Umbrella_API.Models
             Password = password;
             CreatedDate = DateTime.Now;
             LastModifiedDate = CreatedDate;
+        }
+
+        public void SetNotes(List<Note> notes)
+        {
+            Notes = notes;
         }
     }
 }

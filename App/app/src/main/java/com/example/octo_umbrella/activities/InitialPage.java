@@ -1,10 +1,12 @@
-package com.example.octo_umbrella;
+package com.example.octo_umbrella.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.octo_umbrella.R;
 
 public class InitialPage extends AppCompatActivity {
 

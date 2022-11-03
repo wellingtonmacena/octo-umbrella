@@ -1,4 +1,4 @@
-package com.example.octo_umbrella;
+package com.example.octo_umbrella.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,9 +12,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
+import com.example.octo_umbrella.R;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class SignupActivity extends AppCompatActivity {
