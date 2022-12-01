@@ -11,4 +11,7 @@
     <string name="txt_forget_password">Esqueceu sua senha?</string>
     <string name="txt_enter">Entrar</string>
     <string name="txt_create_your_Account"> <u> Crie sua conta</u> </string>
+
+    <string name="txt_open_nav_drawer"> <u> Navigation Drawer Open</u> </string>
+    <string name="txt_close_nav_drawer"> <u> Navigation Drawer Closed</u> </string>
 </resources>

@@ -31,7 +31,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(response.isSuccessful() && response.body() != null){
                     SwitchActivity(NotesActivity.class);
-                }else{
+                }
+                else{
                     Toast.makeText(LoginActivity.this,
                             "Email e/ou incorretos(as). Tente novamente",
                             Toast.LENGTH_SHORT
@@ -56,8 +57,8 @@ public class LoginActivity extends AppCompatActivity {
         SwitchActivity(SignupActivity.class);
     }
 
-    public void SwitchActivity(Class class1) {
-        Intent i = new Intent(LoginActivity.this, class1);
+    public void SwitchActivity(Class classParameter) {
+        Intent i = new Intent(LoginActivity.this, classParameter);
         startActivity(i);
     }
 }
